@@ -21,25 +21,26 @@ body {
   font-family: "Inter", system-ui, sans-serif;
   line-height: 1.6;
   min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
 }
 
 header {
   position: fixed;
   top: 0;
   width: 100%;
-  padding: 24px 5%;
+  padding: 1.2rem 5%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   z-index: 1000;
   backdrop-filter: blur(16px);
-  background: rgba(10, 10, 15, 0.7);
+  background: rgba(10, 10, 15, 0.72);
   border-bottom: 1px solid var(--border);
 }
 
 .logo {
   font-family: "Orbitron", monospace;
-  font-size: 2rem;
+  font-size: 2.1rem;
   font-weight: 900;
   letter-spacing: -1px;
   background: linear-gradient(90deg, #8b7aff, #c17aff);
@@ -48,12 +49,17 @@ header {
   color: transparent;
 }
 
+nav {
+  display: flex;
+  gap: 2.2rem;
+}
+
 nav a {
   color: var(--text-dim);
   text-decoration: none;
-  margin-left: 36px;
   font-weight: 500;
-  transition: color 0.25s;
+  font-size: 0.98rem;
+  transition: color 0.2s ease;
 }
 
 nav a:hover {
@@ -61,56 +67,55 @@ nav a:hover {
 }
 
 #hero {
-  height: 100vh;
-  min-height: 720px;
-  position: relative;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  overflow: hidden;
+  position: relative;
+  padding: 0 5%;
 }
 
 .hero-content {
   position: relative;
   z-index: 2;
-  max-width: 880px;
-  padding: 0 20px;
+  max-width: 900px;
 }
 
 h1 {
-  font-size: clamp(3.8rem, 12vw, 10rem);
+  font-size: clamp(3.5rem, 11vw, 9.8rem);
   font-weight: 900;
-  line-height: 0.92;
-  letter-spacing: -4px;
-  margin-bottom: 24px;
-  background: linear-gradient(120deg, #ffffff 0%, #c0c0ff 50%, #e0c0ff 100%);
+  line-height: 0.9;
+  letter-spacing: -3px;
+  margin-bottom: 1.4rem;
+  background: linear-gradient(110deg, #ffffff 0%, #d0c8ff 50%, #e8d0ff 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
 
 .subtitle {
-  font-size: 1.5rem;
+  font-size: clamp(1.2rem, 4vw, 1.6rem);
   color: var(--text-dim);
-  margin-bottom: 48px;
+  margin-bottom: 3rem;
 }
 
 .cta-group {
   display: flex;
-  gap: 20px;
+  gap: 1.2rem;
   justify-content: center;
   flex-wrap: wrap;
 }
 
 .btn {
-  padding: 16px 36px;
-  font-size: 1.1rem;
+  padding: 0.9rem 2.2rem;
+  font-size: 1.05rem;
   font-weight: 600;
-  border-radius: 12px;
+  border-radius: 10px;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.28s ease;
   border: none;
+  white-space: nowrap;
 }
 
 .btn.primary {
@@ -121,17 +126,17 @@ h1 {
 .btn.primary:hover {
   background: var(--primary-dark);
   transform: translateY(-2px);
-  box-shadow: 0 12px 32px rgba(110, 91, 255, 0.35);
+  box-shadow: 0 10px 30px rgba(110, 91, 255, 0.3);
 }
 
 .btn.outline {
   background: transparent;
-  border: 1.5px solid var(--primary);
+  border: 2px solid var(--primary);
   color: var(--primary);
 }
 
 .btn.outline:hover {
-  background: rgba(110, 91, 255, 0.08);
+  background: rgba(110, 91, 255, 0.07);
 }
 
 .gradient-bg {
@@ -139,20 +144,20 @@ h1 {
   inset: 0;
   background:
     radial-gradient(
-      circle at 20% 30%,
-      rgba(110, 91, 255, 0.18) 0%,
-      transparent 40%
+      circle at 15% 25%,
+      rgba(110, 91, 255, 0.16) 0%,
+      transparent 45%
     ),
     radial-gradient(
-      circle at 80% 70%,
-      rgba(193, 122, 255, 0.14) 0%,
-      transparent 50%
+      circle at 85% 75%,
+      rgba(193, 122, 255, 0.13) 0%,
+      transparent 55%
     );
   pointer-events: none;
 }
 
 .section {
-  padding: 140px 5% 160px;
+  padding: 8rem 5% 10rem;
 }
 
 .container {
@@ -161,14 +166,14 @@ h1 {
 }
 
 .container.narrow {
-  max-width: 720px;
+  max-width: 760px;
 }
 
 h2 {
-  font-size: 4.2rem;
+  font-size: clamp(2.8rem, 7vw, 4.5rem);
   font-weight: 800;
   text-align: center;
-  margin-bottom: 80px;
+  margin-bottom: 4.5rem;
   background: linear-gradient(90deg, #c0c0ff, #ffffff, #e0c0ff);
   -webkit-background-clip: text;
   background-clip: text;
@@ -178,99 +183,99 @@ h2 {
 .vision-grid,
 .features-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 32px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
 }
 
 .vision-card {
   background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: 16px;
-  padding: 48px 36px;
-  transition: all 0.35s ease;
+  border-radius: 14px;
+  padding: 3rem 2.2rem;
+  transition: all 0.32s ease;
   position: relative;
-  overflow: hidden;
 }
 
 .vision-card:hover {
-  transform: translateY(-12px);
+  transform: translateY(-10px);
   border-color: var(--primary);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.38);
 }
 
 .number {
   position: absolute;
-  top: 24px;
-  right: 32px;
+  top: 1.4rem;
+  right: 1.8rem;
   font-family: "Orbitron", monospace;
-  font-size: 5rem;
+  font-size: 6rem;
   font-weight: 900;
-  opacity: 0.08;
+  opacity: 0.07;
   line-height: 1;
+  pointer-events: none;
 }
 
 .vision-card h3 {
-  font-size: 1.8rem;
-  margin-bottom: 16px;
+  font-size: 1.65rem;
+  margin-bottom: 1rem;
 }
 
 .feature-item {
   text-align: center;
-  padding: 40px 24px;
-  border-radius: 16px;
+  padding: 2.8rem 1.8rem;
+  border-radius: 14px;
   background: linear-gradient(
     145deg,
-    rgba(20, 20, 30, 0.6),
-    rgba(10, 10, 20, 0.8)
+    rgba(25, 25, 35, 0.55),
+    rgba(10, 10, 20, 0.75)
   );
-  border: 1px solid rgba(110, 91, 255, 0.12);
+  border: 1px solid rgba(110, 91, 255, 0.1);
 }
 
 .icon {
-  font-size: 3.2rem;
-  margin-bottom: 24px;
+  font-size: 3.4rem;
+  margin-bottom: 1.6rem;
   color: var(--primary);
 }
 
 .feature-item h3 {
-  font-size: 1.5rem;
-  margin-bottom: 12px;
+  font-size: 1.45rem;
+  margin-bottom: 0.8rem;
 }
 
 .lead {
   text-align: center;
-  font-size: 1.4rem;
+  font-size: 1.35rem;
   color: var(--text-dim);
-  margin-bottom: 40px;
+  margin-bottom: 2.5rem;
 }
 
 .waitlist-form {
   display: flex;
-  gap: 16px;
-  max-width: 520px;
-  margin: 0 auto 24px;
+  gap: 1rem;
+  max-width: 580px;
+  margin: 0 auto 1.5rem;
   flex-wrap: wrap;
 }
 
 .waitlist-form input {
   flex: 1;
-  padding: 18px 24px;
+  min-width: 240px;
+  padding: 1rem 1.5rem;
   border: 1px solid var(--border);
-  border-radius: 12px;
+  border-radius: 10px;
   background: var(--surface);
   color: white;
-  font-size: 1.1rem;
-  min-width: 260px;
+  font-size: 1.05rem;
 }
 
 .waitlist-form input:focus {
   outline: none;
   border-color: var(--primary);
-  box-shadow: 0 0 0 3px rgba(110, 91, 255, 0.2);
+  box-shadow: 0 0 0 3px rgba(110, 91, 255, 0.18);
 }
 
 footer {
-  padding: 80px 5% 120px;
+  padding: 5rem 5% 7rem;
   text-align: center;
   border-top: 1px solid var(--border);
 }
@@ -281,32 +286,123 @@ footer {
 }
 
 .small {
-  font-size: 0.95rem;
+  font-size: 0.92rem;
   color: #606080;
-  text-align: center;
-  margin-top: 16px;
+  margin-top: 1.2rem;
 }
 
-.section.dark {
-  background: linear-gradient(to bottom, #0a0a0f, #0f0f18);
+/* ────────────────────────────────────────────────
+   RESPONSIVE DESIGN – MOBILE FIRST
+───────────────────────────────────────────────── */
+
+@media (max-width: 1024px) {
+  header {
+    padding: 1.1rem 6%;
+  }
+
+  nav {
+    gap: 1.6rem;
+  }
+
+  .section {
+    padding: 6rem 6% 8rem;
+  }
 }
 
 @media (max-width: 768px) {
-  h1 {
-    font-size: 4.8rem;
-    letter-spacing: -3px;
-  }
-  h2 {
-    font-size: 3rem;
-  }
   header {
-    padding: 20px 6%;
+    padding: 1rem 5%;
+    flex-wrap: wrap;
+    gap: 1rem;
   }
+
+  nav {
+    width: 100%;
+    justify-content: center;
+    gap: 1.4rem;
+    margin-top: 0.6rem;
+  }
+
   nav a {
-    margin-left: 20px;
-    font-size: 0.95rem;
+    font-size: 0.94rem;
   }
+
+  h1 {
+    font-size: clamp(3rem, 10vw, 5.8rem);
+    letter-spacing: -2px;
+  }
+
+  .subtitle {
+    font-size: 1.3rem;
+  }
+
   .cta-group {
     flex-direction: column;
+    gap: 1rem;
+  }
+
+  .btn {
+    padding: 1rem 2.5rem;
+    width: 100%;
+    max-width: 360px;
+  }
+
+  .section {
+    padding: 5rem 6% 7rem;
+  }
+
+  h2 {
+    font-size: 2.8rem;
+    margin-bottom: 3.5rem;
+  }
+
+  .vision-grid,
+  .features-grid {
+    gap: 1.6rem;
+  }
+
+  .vision-card {
+    padding: 2.4rem 1.8rem;
+  }
+
+  .number {
+    font-size: 5rem;
+    opacity: 0.06;
+  }
+
+  .waitlist-form {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .waitlist-form input {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    font-size: 1.9rem;
+  }
+
+  h1 {
+    font-size: clamp(2.6rem, 9.5vw, 4.2rem);
+  }
+
+  h2 {
+    font-size: 2.4rem;
+  }
+
+  .subtitle {
+    font-size: 1.15rem;
+  }
+
+  .section {
+    padding: 4.5rem 5% 6rem;
+  }
+
+  .vision-card h3,
+  .feature-item h3 {
+    font-size: 1.4rem;
   }
 }
